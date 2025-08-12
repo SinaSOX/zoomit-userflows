@@ -10,9 +10,9 @@ This project provides a comprehensive analysis of user flows on the Zoomit.ir we
 
 ### 🌐 Live Demo | نسخه آنلاین
 
-**Visit the live website:** [https://your-username.github.io/zoomit-userflows](https://your-username.github.io/zoomit-userflows)
+**Visit the live website:** [https://SinaSOX.github.io/zoomit-userflows](https://SinaSOX.github.io/zoomit-userflows)
 
-**مشاهده سایت آنلاین:** [https://your-username.github.io/zoomit-userflows](https://your-username.github.io/zoomit-userflows)
+**مشاهده سایت آنلاین:** [https://SinaSOX.github.io/zoomit-userflows](https://SinaSOX.github.io/zoomit-userflows)
 
 ### 📁 Project Structure | ساختار پروژه
 
@@ -84,13 +84,13 @@ zoomit-userflows/
 #### Installation | نصب
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/zoomit-userflows.git
+   git clone https://github.com/SinaSOX/zoomit-userflows.git
    cd zoomit-userflows
    ```
 
 2. Open `index.html` in your browser
 
-3. Or visit the live demo at: [https://your-username.github.io/zoomit-userflows](https://your-username.github.io/zoomit-userflows)
+3. Or visit the live demo at: [https://SinaSOX.github.io/zoomit-userflows](https://SinaSOX.github.io/zoomit-userflows)
 
 ### 📊 Technical Details | جزئیات فنی
 
