@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جریان‌های کاربری سایت زومیت - صفحه اصلی</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet" type="text/css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Vazir', 'Tahoma', 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3.2em;
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-family: 'Vazir', sans-serif;
+        }
+
+        .header p {
+            font-size: 1.4em;
+            opacity: 0.9;
+            font-family: 'Vazir', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content {
+            padding: 50px;
+        }
+
+        .intro-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+            font-family: 'Vazir', sans-serif;
+        }
+
+        .intro-section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .intro-section p {
+            color: #495057;
+            font-size: 1.2em;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .flows-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .flow-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            font-family: 'Vazir', sans-serif;
+            border: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .flow-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--card-color-1), var(--card-color-2));
+        }
+
+        .flow-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            border-color: var(--card-color-1);
+        }
+
+        .flow-card.news-flow {
+            --card-color-1: #007bff;
+            --card-color-2: #0056b3;
+        }
+
+        .flow-card.buying-flow {
+            --card-color-1: #e74c3c;
+            --card-color-2: #c0392b;
+        }
+
+        .flow-card.product-flow {
+            --card-color-1: #3498db;
+            --card-color-2: #2980b9;
+        }
+
+        .flow-card.education-flow {
+            --card-color-1: #20bf6b;
+            --card-color-2: #0fb9b1;
+        }
+
+        .flow-card.video-flow {
+            --card-color-1: #e91e63;
+            --card-color-2: #9c27b0;
+        }
+
+        .flow-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .flow-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .flow-description {
+            color: #6c757d;
+            line-height: 1.8;
+            font-size: 1.1em;
+            margin-bottom: 25px;
+        }
+
+        .flow-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .flow-features li {
+            padding: 8px 0;
+            color: #495057;
+            font-size: 1em;
+            position: relative;
+            padding-right: 25px;
+        }
+
+        .flow-features li::before {
+            content: "✓";
+            position: absolute;
+            right: 0;
+            color: var(--card-color-1);
+            font-weight: bold;
+        }
+
+        .flow-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: linear-gradient(135deg, var(--card-color-1), var(--card-color-2));
+            color: white;
+            border-radius: 10px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.5em;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .view-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--card-color-1), var(--card-color-2));
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+
+        .view-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            color: white;
+            text-decoration: none;
+        }
+
+        .summary-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .summary-section h3 {
+            margin-bottom: 25px;
+            font-size: 2em;
+            font-family: 'Vazir', sans-serif;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .summary-item {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+            font-family: 'Vazir', sans-serif;
+        }
+
+        .summary-item h4 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .summary-item p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            font-family: 'Vazir', sans-serif;
+        }
+
+        .footer p {
+            opacity: 0.8;
+            font-size: 1em;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .flows-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .flow-card {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔄 جریان‌های کاربری سایت زومیت</h1>
+            <p>تحلیل کامل و تفصیلی تمام مسیرهای کاربری در سایت zoomit.ir با استفاده از فونت وزیر</p>
+        </div>
+
+        <div class="content">
+            <div class="intro-section">
+                <h2>🎯 مقدمه</h2>
+                <p>
+                    این مجموعه شامل تحلیل کامل و تفصیلی تمام جریان‌های کاربری سایت زومیت است. 
+                    هر جریان به صورت جداگانه و با جزئیات کامل بررسی شده و شامل نمودارهای بصری، 
+                    مراحل دقیق، ویژگی‌ها و تحلیل تجربه کاربری است. تمام فایل‌ها با فونت وزیر طراحی شده‌اند.
+                </p>
+            </div>
+
+            <div class="flows-grid">
+                <div class="flow-card news-flow">
+                    <span class="flow-icon">📰</span>
+                    <div class="flow-title">جریان خواندن اخبار و مقالات</div>
+                    <div class="flow-description">
+                        مسیر کامل کاربر از ورود تا مطالعه مقالات و تعامل با محتوا در بخش‌های مختلف فناوری
+                    </div>
+                    <ul class="flow-features">
+                        <li>دسته‌بندی دقیق مقالات</li>
+                        <li>سیستم نظرات فعال</li>
+                        <li>اشتراک‌گذاری آسان</li>
+                        <li>پیشنهادات هوشمند</li>
+                    </ul>
+                    <div class="flow-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">دسته‌بندی</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">مقاله روزانه</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">95%</span>
+                            <span class="stat-label">رضایت</span>
+                        </div>
+                    </div>
+                    <a href="news-flow.html" class="view-button">مشاهده جریان اخبار</a>
+                </div>
+
+                <div class="flow-card buying-flow">
+                    <span class="flow-icon">🛒</span>
+                    <div class="flow-title">جریان راهنمای خرید</div>
+                    <div class="flow-description">
+                        مسیر کاربر برای انتخاب و خرید محصولات با راهنماهای تخصصی و مقایسه‌های دقیق
+                    </div>
+                    <ul class="flow-features">
+                        <li>راهنماهای تخصصی</li>
+                        <li>مقایسه دقیق محصولات</li>
+                        <li>لینک مستقیم فروشگاه‌ها</li>
+                        <li>معیارهای انتخاب</li>
+                    </ul>
+                    <div class="flow-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">10</span>
+                            <span class="stat-label">دسته محصول</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">88</span>
+                            <span class="stat-label">راهنما</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">رضایت</span>
+                        </div>
+                    </div>
+                    <a href="buying-guide-flow.html" class="view-button">مشاهده جریان خرید</a>
+                </div>
+
+                <div class="flow-card product-flow">
+                    <span class="flow-icon">📱</span>
+                    <div class="flow-title">جریان مقایسه و خرید محصولات (زوبین)</div>
+                    <div class="flow-description">
+                        مسیر کاربر برای مقایسه و خرید محصولات در بخش زوبین با فیلترهای پیشرفته
+                    </div>
+                    <ul class="flow-features">
+                        <li>مقایسه دقیق محصولات</li>
+                        <li>فیلترهای پیشرفته</li>
+                        <li>قیمت‌های به‌روز</li>
+                        <li>نظرات کاربران</li>
+                    </ul>
+                    <div class="flow-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">دسته‌بندی</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5000+</span>
+                            <span class="stat-label">محصول</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">99%</span>
+                            <span class="stat-label">دقت قیمت</span>
+                        </div>
+                    </div>
+                    <a href="product-comparison-flow.html" class="view-button">مشاهده جریان محصولات</a>
+                </div>
+
+                <div class="flow-card education-flow">
+                    <span class="flow-icon">📚</span>
+                    <div class="flow-title">جریان آموزش</div>
+                    <div class="flow-description">
+                        مسیر کاربر برای یادگیری مهارت‌های مختلف با آموزش‌های قدم به قدم و ویدیوهای مکمل
+                    </div>
+                    <ul class="flow-features">
+                        <li>آموزش‌های قدم به قدم</li>
+                        <li>ویدیوهای آموزشی</li>
+                        <li>امکان پرسش و پاسخ</li>
+                        <li>دسته‌بندی دقیق</li>
+                    </ul>
+                    <div class="flow-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">دسته اصلی</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">350+</span>
+                            <span class="stat-label">مقاله آموزشی</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">97%</span>
+                            <span class="stat-label">رضایت</span>
+                        </div>
+                    </div>
+                    <a href="education-flow.html" class="view-button">مشاهده جریان آموزش</a>
+                </div>
+
+                <div class="flow-card video-flow">
+                    <span class="flow-icon">🎥</span>
+                    <div class="flow-title">جریان تماشای ویدیو</div>
+                    <div class="flow-description">
+                        مسیر کاربر برای تماشای ویدیوهای آموزشی و سرگرمی با پلیر با کیفیت و کنترل‌های کامل
+                    </div>
+                    <ul class="flow-features">
+                        <li>پلیر با کیفیت بالا</li>
+                        <li>کنترل‌های کامل</li>
+                        <li>پیشنهادات هوشمند</li>
+                        <li>اشتراک‌گذاری آسان</li>
+                    </ul>
+                    <div class="flow-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">دسته‌بندی</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">530+</span>
+                            <span class="stat-label">ویدیو</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">96%</span>
+                            <span class="stat-label">رضایت</span>
+                        </div>
+                    </div>
+                    <a href="video-watching-flow.html" class="view-button">مشاهده جریان ویدیو</a>
+                </div>
+            </div>
+
+            <div class="summary-section">
+                <h3>📊 خلاصه آماری</h3>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <h4>🎯 تعداد جریان‌ها</h4>
+                        <p>5 جریان کاربری اصلی که تمام فعالیت‌های سایت را پوشش می‌دهند</p>
+                    </div>
+                    <div class="summary-item">
+                        <h4>📈 پوشش کامل</h4>
+                        <p>تمام بخش‌های سایت زومیت از اخبار تا خرید و آموزش پوشش داده شده</p>
+                    </div>
+                    <div class="summary-item">
+                        <h4>🎨 طراحی یکپارچه</h4>
+                        <p>استفاده از فونت وزیر در تمام فایل‌ها برای تجربه بصری یکپارچه</p>
+                    </div>
+                    <div class="summary-item">
+                        <h4>📱 سازگار موبایل</h4>
+                        <p>تمام فایل‌ها بهینه‌سازی شده برای نمایش در دستگاه‌های مختلف</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 تحلیل جریان‌های کاربری سایت زومیت - طراحی شده با فونت وزیر</p>
+        </div>
+    </div>
+
+    <script>
+        // Add interactive features
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click effects to flow cards
+            const flowCards = document.querySelectorAll('.flow-card');
+            flowCards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    // Don't trigger if clicking on the button
+                    if (e.target.classList.contains('view-button')) {
+                        return;
+                    }
+                    
+                    // Find the button in this card and click it
+                    const button = this.querySelector('.view-button');
+                    if (button) {
+                        button.click();
+                    }
+                });
+            });
+
+            // Add hover effects to summary items
+            const summaryItems = document.querySelectorAll('.summary-item');
+            summaryItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.02)';
+                });
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
